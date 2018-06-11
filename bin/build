@@ -1,0 +1,4 @@
+#!/bin/sh
+
+uglifyjs src/raven-ignore.js -o dist/raven-ignore.min.js
+uglifyjs src/raven.min.js -o dist/raven.min.js
