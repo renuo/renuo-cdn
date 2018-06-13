@@ -4,7 +4,7 @@ You can access the CDN at https://cdn.renuo.ch.
 
 Resources are served with an expiring time of 7 days.
 
-[![Build Status](https://semaphoreci.com/api/v1/renuo/renuo-cdn/branches/introduce_src_and_dist_folders/badge.svg)](https://semaphoreci.com/renuo/renuo-cdn)
+[![Build Status](https://semaphoreci.com/api/v1/renuo/renuo-cdn/branches/master/badge.svg)](https://semaphoreci.com/renuo/renuo-cdn)
 
 # Resources
 
