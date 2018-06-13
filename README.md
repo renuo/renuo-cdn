@@ -1,17 +1,19 @@
 # renuo-cdn
+Renuo CDN to deliver common projects resources.
+You can access the CDN at https://cdn.renuo.ch.
 
-Renuo customised CDN to deliver common projects resources
+Resources are served with an expiring time of 7 days.
 
 [![Build Status](https://semaphoreci.com/api/v1/renuo/renuo-cdn/branches/introduce_src_and_dist_folders/badge.svg)](https://semaphoreci.com/renuo/renuo-cdn)
 
-# Content of the CDN
+# Resources
 
-## raven.js
+## raven.min.js
 
-raven.min.js is updated frequently.
+raven.min.js is updated very frequently.
 In this repo we keep the most recent version and all our projects point to it.
 
-## raven-ignore.js
+## raven-ignore.min.js
 
 A non-exhaustive list of urls and js errors we always want to ignore.
 Please read about [js decuttering here](https://github.com/getsentry/raven-js/blob/master/docs/tips.rst#decluttering-sentry).
