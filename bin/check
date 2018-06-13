@@ -1,3 +1,18 @@
 #!/bin/sh
 
+bin/build
+
+if [ ! -e dist/raven.min.js ]; then
+    echo "raven.min.js is missing"
+    exit 1
+fi
+
+if [ ! -f dist/raven-ignore.min.js ]; then
+    echo "raven-ignore.min.js is missing"
+    exit 1
+fi
+
 echo "all good"
+
+rm dist/*
+
