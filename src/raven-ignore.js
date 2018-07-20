@@ -23,7 +23,8 @@ RenuoSentryList['ignoreErrors'] = [
   'conduitPage',
   // Generic error code from errors outside the security sandbox
   // You can delete this if using raven.js > 1.0, which ignores these automatically.
-  'Script error.'
+  'Script error.',
+  'fsGetSearchListener(...) is not a function'
 ];
 
 RenuoSentryList['ignoreUrls'] = [
