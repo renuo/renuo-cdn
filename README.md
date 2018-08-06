@@ -12,6 +12,7 @@ Resources are served with an expiring time of 7 days.
 
 raven.min.js is updated very frequently.
 In this repo we keep the most recent version and all our projects point to it.
+Please find the latest version at the [Official GitHub Repo](https://github.com/getsentry/sentry-javascript/blob/master/packages/raven-js/dist/raven.js)
 
 ## raven-ignore.min.js
 
