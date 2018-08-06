@@ -31,16 +31,21 @@ vercomp () {
     return 0
 }
 
-header=`head -n 1 src/raven.min.js`
-old_version=`head -n 1 src/raven.min.js | grep -oEi '\d*\.\d*\.\d*'`
-echo $old_version
-new_version=`curl -s -I https://github.com/getsentry/sentry-javascript/releases/latest | grep Location | grep -oEi '\d*\.\d*\.\d*'`
-echo $new_version
+header=`head -n 1 src/raven.js`
+old_version=`head -n 1 src/raven.js | grep -oEi '\d*\.\d*\.\d*'`
+echo "Current version: $old_version"
+
+curl -s https://raw.githubusercontent.com/getsentry/sentry-javascript/master/packages/raven-js/dist/raven.js > src/raven.new.js
+new_version=`head -n 1 src/raven.new.js | grep -oEi '\d*\.\d*\.\d*'`
+echo "Latest version: $new_version"
+
 vercomp $old_version $new_version
 case $? in
-    0) echo "no update needed";;
+    0) echo "No update needed.";;
     1) echo "your version is newer then sentry one";;
     2)
-        echo "you need to update"
+        cp src/raven.new.js src/raven.js
+        echo "Updated to the latest version."
         ;;
 esac
+rm src/raven.new.js

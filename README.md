@@ -32,6 +32,16 @@ Please read about [js decuttering here](https://github.com/getsentry/raven-js/bl
     bin/check
 ```
 
+# How to update the CDN
+
+1. Clone the project
+2. Execute `bin/fetch_latest`. This will check for a newer version and download it.
+3. Commit the new version on master.
+
+Done :tada: .
+
+The CI will automatically deploy the newer version.
+
 # Copyright
 
 Coypright 2018 [Renuo AG](https://www.renuo.ch/).
