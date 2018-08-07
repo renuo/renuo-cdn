@@ -1,0 +1,46 @@
+#!/bin/sh
+
+vercomp () {
+    if [[ $1 == $2 ]]
+    then
+        return 0
+    fi
+    local IFS=.
+    local i ver1=($1) ver2=($2)
+    # fill empty fields in ver1 with zeros
+    for ((i=${#ver1[@]}; i<${#ver2[@]}; i++))
+    do
+        ver1[i]=0
+    done
+    for ((i=0; i<${#ver1[@]}; i++))
+    do
+        if [[ -z ${ver2[i]} ]]
+        then
+            # fill empty fields in ver2 with zeros
+            ver2[i]=0
+        fi
+        if ((10#${ver1[i]} > 10#${ver2[i]}))
+        then
+            return 1
+        fi
+        if ((10#${ver1[i]} < 10#${ver2[i]}))
+        then
+            return 2
+        fi
+    done
+    return 0
+}
+
+header=`head -n 1 src/raven.min.js`
+old_version=`head -n 1 src/raven.min.js | grep -oEi '\d*\.\d*\.\d*'`
+echo $old_version
+new_version=`curl -s -I https://github.com/getsentry/sentry-javascript/releases/latest | grep Location | grep -oEi '\d*\.\d*\.\d*'`
+echo $new_version
+vercomp $old_version $new_version
+case $? in
+    0) echo "no update needed";;
+    1) echo "your version is newer then sentry one";;
+    2)
+        echo "you need to update"
+        ;;
+esac
