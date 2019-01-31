@@ -45,3 +45,7 @@ RenuoSentryList['ignoreUrls'] = [
   /webappstoolbarba\.texthelp\.com\//i,
   /metrics\.itunes\.apple\.com\.edgesuite\.net\//i
 ];
+
+RenuoSentryList['shouldSendCallback'] = function(data){
+  return !/^(.*CloudFlare-AlwaysOnline.*|.+MSIE 8\.0;.+)$/.test(window.navigator.userAgent);
+};
