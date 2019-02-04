@@ -26,7 +26,9 @@ RenuoSentryList['ignoreErrors'] = [
   'Script error.',
   'fsGetSearchListener(...) is not a function',
   // https://github.com/SamsungInternet/support/issues/56
-  'document.getElementsByClassName.ToString is not a function'
+  'document.getElementsByClassName.ToString is not a function',
+  // Fair Ad Block: https://stackoverflow.com/questions/50272371/what-is-betterjspop-error-on-chrome
+  'BetterJsPop is undefined'
 ];
 
 RenuoSentryList['ignoreUrls'] = [
