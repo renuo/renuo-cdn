@@ -12,6 +12,11 @@ if [ ! -f dist/raven-ignore.min.js ]; then
     exit 1
 fi
 
+if [ ! -f dist/sentry-ignore.min.js ]; then
+    echo "sentry-ignore.min.js is missing"
+    exit 1
+fi
+
 echo "all good"
 
 rm dist/*
