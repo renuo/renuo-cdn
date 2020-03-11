@@ -2,4 +2,5 @@
 
 uglifyjs src/raven.js -o dist/raven.min.js
 uglifyjs src/raven-ignore.js -o dist/raven-ignore.min.js
+uglifyjs src/sentry.js -o dist/sentry.min.js
 uglifyjs src/sentry-ignore.js -o dist/sentry-ignore.min.js
