@@ -26,7 +26,9 @@ renuoSentryConfig['ignoreErrors'] = [
   'Script error.',
   'fsGetSearchListener(...) is not a function',
   // https://github.com/SamsungInternet/support/issues/56
-  'document.getElementsByClassName.ToString is not a function'
+  'document.getElementsByClassName.ToString is not a function',
+  // old browser versions #18169
+  'AbortController is not defined'
 ];
 
 renuoSentryConfig['blacklistUrls'] = [
