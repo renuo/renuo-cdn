@@ -1,0 +1,32 @@
+version: "v1.0"
+name: renuo-cdn
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+auto_cancel:
+  running:
+    when: "true"
+fail_fast:
+  cancel:
+    when: "branch != 'main'"
+
+blocks:
+  - name: tests
+    execution_time_limit:
+      minutes: 10
+    task:
+      prologue:
+        commands:
+          - checkout --use-cache
+          - npm install uglify-js -g
+      jobs:
+        - name: tests
+          commands:
+            - bin/check
+
+promotions:
+  - name: main
+    pipeline_file: main-deploy.yml
+    auto_promote:
+      when: "result = 'passed' and branch = 'main'"

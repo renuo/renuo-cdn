@@ -1,0 +1,19 @@
+version: v1.0
+name: main-deploy
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+
+blocks:
+  - name: main-deploy
+    task:
+      secrets:
+        - name: renuo-cdn
+      jobs:
+        - name: main-deploy
+          commands:
+            - checkout --use-cache
+            - npm install uglify-js -g
+            - bin/build
+            - aws s3 sync $S3_DIRECTORY s3://$S3_BUCKET_NAME/ --acl=public-read --delete --exclude '.keep'
