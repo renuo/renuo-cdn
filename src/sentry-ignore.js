@@ -52,6 +52,10 @@ renuoSentryConfig['beforeSend'] = function(event){
   if (/^(.*CloudFlare-AlwaysOnline.*|.+MSIE 8\.0;.+)$/.test(window.navigator.userAgent)) {
     return null
   } else {
+    var match = /Chrome\/(\d+)/g.exec(window.navigator.userAgent);
+    if (match && parseInt(match[1]) < 85) {
+      return null
+    }
     return event;
   }
 };
