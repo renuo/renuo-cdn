@@ -22,6 +22,14 @@ if [ ! -f dist/sentry-ignore.min.js ]; then
     exit 1
 fi
 
+
+if node test/sentry-ignore-test.js ; then
+    echo "tests passed"
+else
+    echo "tests failed"
+    exit 1
+fi
+
 echo "all good"
 
 rm dist/*
