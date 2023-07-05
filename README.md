@@ -3,8 +3,7 @@ Renuo CDN to deliver common projects resources.
 You can access the CDN at https://cdn.renuo.ch.
 
 Resources are served with an expiring time of 7 days.
-
-[![Build Status](https://semaphoreci.com/api/v1/renuo/renuo-cdn/branches/master/badge.svg)](https://semaphoreci.com/renuo/renuo-cdn)
+This means that if you want to refresh your content right away you need to invalidate the [cloudfront distribution](https://us-east-1.console.aws.amazon.com/cloudfront/v3/home?region=eu-central-1#/distributions/E1RNYS7VG5ZEQP/invalidations) as well as the [cloudflare cache](https://dash.cloudflare.com/0e634a111c5f8865a11fa627b8fcc8a3/renuo.ch/caching/configuration).
 
 # Resources
 
