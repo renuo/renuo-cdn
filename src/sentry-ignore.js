@@ -28,7 +28,9 @@ renuoSentryConfig['ignoreErrors'] = [
   // https://github.com/SamsungInternet/support/issues/56
   'document.getElementsByClassName.ToString is not a function',
   // old browser versions #18169
-  'AbortController is not defined'
+  'AbortController is not defined',
+  // see https://github.com/getsentry/sentry-javascript/issues/3440
+  'Non-Error promise rejection captured'
 ];
 
 renuoSentryConfig['blacklistUrls'] = [
