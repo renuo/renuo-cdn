@@ -43,4 +43,4 @@ The CI will automatically deploy the newer version once merged on master.
 
 # Copyright
 
-Coypright 2019-2020 [Renuo AG](https://www.renuo.ch/).
+Copyright 2019-2020 [Renuo AG](https://www.renuo.ch/).
